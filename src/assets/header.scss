@@ -1,0 +1,35 @@
+@import '../assets/colors.scss';
+
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 50px;
+    background-color: $black-dot-8;
+    box-shadow: 0 0 10px $black-dot-8;
+
+    .header-title  {
+        color: $text-white;
+        font-size: 2rem;
+        font-family: 'Courier New', Courier, monospace;
+        letter-spacing: 4px;
+    }
+    
+    .keyboard-icon {
+        color: $text-white;
+        margin: 0 0 0 15px;
+        width: 40px;
+        height: 40px;
+    }
+}
+
+@media only screen and(max-width: 425px){
+    .header {
+        .header-title {
+            display: none;
+        }
+        .keyboard-icon {
+            margin: 0;
+        }
+    }    
+}

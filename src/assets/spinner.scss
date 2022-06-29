@@ -1,0 +1,43 @@
+@import '../assets/colors.scss';
+
+.spinner-container {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    background-color: $black-dot-8;
+    position: absolute;
+    top: 0;
+    border-radius: 5px;
+    z-index: 1;
+}
+
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid $bg-white;
+    border-left-color: $black-dot-1;
+    border-radius: 50%;
+    animation: spin 1s infinite linear;
+}
+
+.spinner-text {
+    display: block;
+    margin-top: 20px;
+    font-size: 1.5rem;
+    color: $bootstrap-faded;
+    text-align: center;
+}
+
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}

@@ -1,0 +1,9 @@
+$pg-max-width-sm: calc(100% - 20px);
+$pg-max-width-md: calc(100% - 40px); 
+$pg-max-width-lg: calc(1366px - 40px); 
+
+:export {
+    pg-max-w-sm: $pg-max-width-sm;
+    pg-max-w-md: $pg-max-width-md;
+    pg-max-w-lg: $pg-max-width-lg;
+}

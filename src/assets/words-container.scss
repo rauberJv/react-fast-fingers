@@ -1,0 +1,19 @@
+@import '../assets/colors.scss';
+
+.words-container {
+    display: block;
+    margin: 10px auto 0;
+    width: 75%;
+    height: 4rem;
+    background-color: $bg-white;
+    border: 1px solid rgba(0, 0, 0, .4);
+    box-shadow: 0 0 2px $black-dot-8;
+    border-radius: 4px;
+    overflow: hidden;
+
+    span {
+        display: inline-block;
+        margin: 2px 4px;
+        font-size: 1.5rem;
+    }
+}
