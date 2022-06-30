@@ -1,4 +1,4 @@
-import '../assets/home.scss'
+import './home.scss'
 import { useEffect, useState } from 'react'
 import { wordsArray } from '../utils/WordsArray'
 // Components Imports
