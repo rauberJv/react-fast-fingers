@@ -1,4 +1,4 @@
-import '../assets/header.scss'
+import './header.scss'
 import { FaRegKeyboard } from 'react-icons/fa'
 
 export default function Header(){

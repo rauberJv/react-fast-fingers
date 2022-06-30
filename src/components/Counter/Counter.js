@@ -1,6 +1,6 @@
-import '../assets/counter.scss'
+import './counter.scss'
 import { useEffect, useState } from 'react'
-export default function Counter({timeInSeconds}){
+export default function Counter({ timeInSeconds }) {
 
     const [remainingTime, setRemainingTime] = useState('')
 
@@ -12,7 +12,6 @@ export default function Counter({timeInSeconds}){
 
     useEffect(() => {
         calculateRemainingTime()
-        // console.log(timeInSeconds)
     }, [timeInSeconds])
 
     return (

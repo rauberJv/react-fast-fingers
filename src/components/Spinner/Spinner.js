@@ -1,4 +1,4 @@
-import '../assets/spinner.scss'
+import './spinner.scss'
 export default function Spinner({showSpinner}) {
     if(showSpinner)
         return (

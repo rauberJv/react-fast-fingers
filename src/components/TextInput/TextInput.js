@@ -1,12 +1,12 @@
-import '../assets/text-input.scss'
+import './text-input.scss'
 export default function TextInput(props) {
 
     const parentCallback = (event) => {
-        props.parentCallback(event.target.value) 
+        props.parentCallback(event.target.value)
     }
-    
+
     const verifySpace = (event) => {
-        if(event.code == 'Space'){
+        if (event.code === 'Space') {
             props.emitSpace()
             clearInput(event)
         }
@@ -17,11 +17,11 @@ export default function TextInput(props) {
     }
 
     return (
-        <input 
+        <input
             id="wordInput"
-            type="text" 
+            type="text"
             placeholder="Start typing here..."
-            className="input" 
+            className="input"
             onKeyDown={verifySpace}
             onChange={parentCallback}
         />

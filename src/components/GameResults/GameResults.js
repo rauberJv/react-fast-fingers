@@ -1,6 +1,4 @@
-import '../assets/game-results.scss'
-
-import { useEffect } from 'react'
+import './game-results.scss'
 
 export default function GameResults({result}){
     

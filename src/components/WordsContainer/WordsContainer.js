@@ -1,5 +1,5 @@
-import '../assets/words-container.scss'
-export default function WordsContainer({words}) {
+import './words-container.scss'
+export default function WordsContainer({ words }) {
 
     return (
         <>

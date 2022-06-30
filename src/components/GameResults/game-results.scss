@@ -1,8 +1,8 @@
-@import '../assets/colors.scss';
+@import '../../assets/colors.scss';
 
-.counter-container {
-    display: block;
-    margin: 0 auto 20px;
+.game-results-container {
+    display:block;
+    margin: 20px auto;
     width: 75%;
 
     span {
@@ -10,11 +10,12 @@
         font-size: 1.5rem;
         font-family: 'Courier New', Courier, monospace;
         font-weight: 700;
-        color: $black-dot-8;
         text-align: end;
+        color: $bootstrap-success;
     }
 
     span + span {
-        margin-left: 10px;
+        margin: 10px 0 0 0;
+        color: $bootstrap-danger;
     }
 }
