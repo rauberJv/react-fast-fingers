@@ -1,23 +1,25 @@
 import './home.scss'
 import { useEffect, useState } from 'react'
-import { wordsArray } from '../utils/WordsArray'
+import { wordsArray } from '../../utils/WordsArray'
 // Components Imports
-import WordsContainer from '../components/WordsContainer/WordsContainer'
-import TextInput from '../components/TextInput/TextInput'
-import GameResults from '../components/GameResults/GameResults'
-import Counter from '../components/Counter/Counter'
-import Spinner from '../components/Spinner/Spinner'
+import WordsContainer from '../../components/WordsContainer/WordsContainer'
+import TextInput from '../../components/TextInput/TextInput'
+import GameResults from '../../components/GameResults/GameResults'
+import Counter from '../../components/Counter/Counter'
+import Spinner from '../../components/Spinner/Spinner'
+import ModalResults from '../../components/ModalResults/ModalResults'
 
 export default function Home() {
     const initialResultsState = { correct: 0, wrong: 0 }
     const INITIALCOUNTERTIME = 10
 
     const [word, setWord] = useState('')
-    const [words] = useState(wordsArray)
+    const [words, setWords] = useState(wordsArray)
     const [results, setResults] = useState(initialResultsState)
     const [timeInSeconds, setTimeInSeconds] = useState(INITIALCOUNTERTIME)
     const [counter, setCounter] = useState(null)
     const [calculatingResults, setCalculatinResults] = useState(false)
+    const [showResultsModal, setShowResultsModal] = useState(false)
 
     const textInputCallback = (data) => {
         if (!calculatingResults) {
@@ -50,7 +52,14 @@ export default function Home() {
         setCalculatinResults(calculatingResults => !calculatingResults)
         setTimeout(() => {
             setCalculatinResults(calculatingResults => !calculatingResults)
+            setShowResultsModal(true)
         }, 4000);
+    }
+
+    function resetGame() {
+        setShowResultsModal(false)
+        setResults(initialResultsState)
+        setWords(wordsArray)
     }
 
     useEffect(() => {
@@ -64,6 +73,14 @@ export default function Home() {
 
     return (
         <main className="container">
+
+            <ModalResults
+                showModal={showResultsModal}
+                timeInSeconds={timeInSeconds}
+                correctWords={results.correct}
+                reset={resetGame}
+            />
+
             <WordsContainer
                 words={words}
             />

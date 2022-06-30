@@ -1,13 +1,20 @@
 import Header from './components/Header/Header';
-import Home from './view/Home'
-
+import Home from './view/Home/Home'
+import ResultsPage from './view/Results/Results';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './assets/app.scss'
-function App() {
 
+function App() {
+  
   return (
     <>
-      <Header />
-      <Home />
+      <BrowserRouter>
+        <Header />
+        <Routes>
+          <Route path='/' index element={<Home />} />
+          <Route path='/results' element={<ResultsPage />} />
+        </Routes>
+      </BrowserRouter>
     </>
   );
 }

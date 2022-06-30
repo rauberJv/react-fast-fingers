@@ -1,0 +1,66 @@
+@import '../../assets/colors.scss';
+
+.modal-results-container {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    background-color: $black-dot-8;
+
+    .title {
+        display: block;
+        align-self: center;
+        font-weight: 500;
+        font-size: 2rem;
+        font-family: 'Courier New', Courier, monospace;
+        color: ghostwhite;
+    }
+
+    .content {
+        display: block;
+        align-self: center;
+        margin-top: 10px;
+        font-size: 1rem;
+        font-weight: 700;
+        font-family: 'Courier New', Courier, monospace;
+        color: ghostwhite;
+
+        .correct {
+            font-weight: 500;
+            color: $bootstrap-success;
+        }
+
+        .time {
+            font-weight: 500;
+            color: $bootstrap-success;
+        }
+
+        .result {
+            font-weight: 500;
+            color: $bootstrap-success;
+        }
+    }
+
+    .modal-actions {
+        display: flex;
+        flex-flow: row no-wrap;
+        margin: 0 auto;
+        margin-top: 20px;
+    }
+
+}
+
+@media only screen and (max-width: 425px) {
+    .modal-results-container {
+
+        .content {
+            margin: 10px 10px;
+        }
+        .modal-actions {
+            flex-flow: column wrap;
+
+            button + button {
+                margin-top: 10px;
+            }
+        }
+    }
+}
