@@ -59,7 +59,7 @@ export default function Home() {
     function resetGame() {
         setShowResultsModal(false)
         setResults(initialResultsState)
-        setWords(wordsArray)
+        setWords(() => wordsArray)
     }
 
     useEffect(() => {
