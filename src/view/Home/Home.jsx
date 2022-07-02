@@ -11,7 +11,7 @@ import Spinner from '../../components/Spinner/Spinner'
 import ModalResults from '../../components/ModalResults/ModalResults'
 
 export default function Home() {
-    const initialResultsState = { correct: 0, wrong: 0, time: 0 }
+    const initialResultsState = { correct: 0, wrong: 0, time: 0, date: Date.now()}
     const INITIALCOUNTERTIME = 10
 
     const [word, setWord] = useState('')
@@ -33,9 +33,9 @@ export default function Home() {
     const spaceCallback = () => {
         if (!calculatingResults) {
             if (word.trim() === words[0])
-                setResults({ correct: results.correct + 1, wrong: results.wrong, time: INITIALCOUNTERTIME })
+                setResults({ correct: results.correct + 1, wrong: results.wrong, time: INITIALCOUNTERTIME, date: Date.now()})
             else
-                setResults({ correct: results.correct, wrong: results.wrong + 1, time: INITIALCOUNTERTIME })
+                setResults({ correct: results.correct, wrong: results.wrong + 1, time: INITIALCOUNTERTIME, date: Date.now()})
             words.shift()
         }
     }

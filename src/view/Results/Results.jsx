@@ -1,4 +1,4 @@
-import { getResults } from "../../api/Results"
+import { getResults, deleteResult } from "../../api/Results"
 import { useEffect, useState } from "react"
 import "./results.scss"
 
@@ -7,6 +7,12 @@ import ResultCard from "../../components/ResultCard/ResultCard"
 export default function ResultsPage() {
 
     const [results, setResults] = useState([])
+
+    const handleDelete = (data) => {
+        deleteResult(data).then((list) => {
+            console.log(list)
+        })
+    }
 
     useEffect(() => {
         getResults().then((resultList) => {
@@ -20,6 +26,7 @@ export default function ResultsPage() {
                 <ResultCard 
                     key={`resultCard#${index}`} 
                     result={result}
+                    deleteResult={handleDelete}
                 />
             ))}
         </main>
