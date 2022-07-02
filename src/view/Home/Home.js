@@ -1,6 +1,7 @@
 import './home.scss'
 import { useEffect, useState } from 'react'
 import { wordsArray } from '../../utils/WordsArray'
+import { saveResult } from '../../api/Results'
 // Components Imports
 import WordsContainer from '../../components/WordsContainer/WordsContainer'
 import TextInput from '../../components/TextInput/TextInput'
@@ -10,7 +11,7 @@ import Spinner from '../../components/Spinner/Spinner'
 import ModalResults from '../../components/ModalResults/ModalResults'
 
 export default function Home() {
-    const initialResultsState = { correct: 0, wrong: 0 }
+    const initialResultsState = { correct: 0, wrong: 0, time: 0 }
     const INITIALCOUNTERTIME = 10
 
     const [word, setWord] = useState('')
@@ -32,9 +33,9 @@ export default function Home() {
     const spaceCallback = () => {
         if (!calculatingResults) {
             if (word.trim() === words[0])
-                setResults({ correct: results.correct + 1, wrong: results.wrong })
+                setResults({ correct: results.correct + 1, wrong: results.wrong, time: INITIALCOUNTERTIME })
             else
-                setResults({ correct: results.correct, wrong: results.wrong + 1 })
+                setResults({ correct: results.correct, wrong: results.wrong + 1, time: INITIALCOUNTERTIME })
             words.shift()
         }
     }
@@ -60,6 +61,16 @@ export default function Home() {
         setShowResultsModal(false)
         setResults(initialResultsState)
         setWords(() => wordsArray)
+
+        let textInput = document.getElementById('wordInput')
+        textInput.value = ''
+    }
+
+    const saveGame = () => {
+        saveResult(results).then((resultList) => {
+            console.log(resultList)
+            resetGame()
+        })
     }
 
     useEffect(() => {
@@ -69,7 +80,7 @@ export default function Home() {
             setTimeInSeconds(() => INITIALCOUNTERTIME)
             calculateResults()
         }
-    }, [timeInSeconds])
+    }, [timeInSeconds, counter])
 
     return (
         <main className="container">
@@ -79,6 +90,7 @@ export default function Home() {
                 timeInSeconds={timeInSeconds}
                 correctWords={results.correct}
                 reset={resetGame}
+                save={saveGame}
             />
 
             <WordsContainer

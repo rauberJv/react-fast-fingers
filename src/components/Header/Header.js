@@ -1,16 +1,17 @@
 import './header.scss'
 import { FaRegKeyboard } from 'react-icons/fa'
-import { Link } from "react-router-dom"
+import HeaderNavigation from '../HeaderNavigation/HeaderNavigation'
 
 export default function Header() {
     return (
         <header>
-            <Link to="/" className='header'>
+            <div className='header'>
                 <span className='header-title'>
                     Fast Fingers
                 </span>
                 <FaRegKeyboard className='keyboard-icon' />
-            </Link>
+            </div>
+            <HeaderNavigation />
         </header>
     )
 }

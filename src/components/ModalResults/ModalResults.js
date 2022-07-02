@@ -4,7 +4,7 @@ import ActionButton from '../ActionButton/ActionButton'
 export default function ModalResults({ showModal, timeInSeconds, correctWords, ...props }) {
 
     function saveClick() {
-        console.log('Save')
+        props.save()
     }
 
     function resetClick() {
