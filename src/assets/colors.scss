@@ -4,10 +4,25 @@ $black-dot-8: rgba(0, 0, 0, .8);
 $black-dot-1: rgba(0, 0, 0, .1);
 
 $bootstrap-danger:  rgb(217, 83, 79);
+$bootstrap-danger-hover:  rgba(217, 83, 79, .8);
+$bootstrap-danger-active:  rgba(217, 83, 79, .6);
+
 $bootstrap-success: rgb(92, 184, 92);
+$bootstrap-success-hover: rgba(92, 184, 92, .8);
+$bootstrap-success-active: rgba(92, 184, 92, .6);
+
 $bootstrap-warning: rgb(240, 173, 78);
+$bootstrap-warning-hover: rgba(240, 173, 78, .8);
+$bootstrap-warning-active: rgba(240, 173, 78, .6);
+
 $bootstrap-info:    rgb(91, 192, 222);
+$bootstrap-info-hover: rgba(91, 192, 222, .8);
+$bootstrap-info-active: rgba(91, 192, 222, .6);
+
 $bootstrap-primary: rgb(2, 117, 216);
+$bootstrap-primary-hover: rgba(2, 117, 216, .8);
+$bootstrap-primary-active: rgba(2, 117, 216, .6);
+
 $bootstrap-inverse: rgb(41, 43, 44);
 $bootstrap-faded:   rgb(247, 247, 247);
 
@@ -16,10 +31,20 @@ $bootstrap-faded:   rgb(247, 247, 247);
     text-white: $text-white;
     black-dot-8: $black-dot-8;
     bootstrap-danger:   $bootstrap-danger;
+    bootstrap-danger-hover:   $bootstrap-danger-hover;
+    bootstrap-danger-active:   $bootstrap-danger-active;
     bootstrap-success:  $bootstrap-success;
+    bootstrap-success-hover:  $bootstrap-success-hover;
+    bootstrap-success-active:  $bootstrap-success-active;
     bootstrap-warning:  $bootstrap-warning;
+    bootstrap-warning-hover:  $bootstrap-warning-hover;
+    bootstrap-warning-active:  $bootstrap-warning-active;
     bootstrap-info:     $bootstrap-info;
+    bootstrap-info-hover:     $bootstrap-info-hover;
+    bootstrap-info-active:     $bootstrap-info-active;
     bootstrap-primary:  $bootstrap-primary;
+    bootstrap-primary-hover:  $bootstrap-primary-hover;
+    bootstrap-primary-active:  $bootstrap-primary-active;
     bootstrap-inverse:  $bootstrap-inverse;
     bootstrap-faded:    $bootstrap-faded;
 

@@ -1,5 +1,6 @@
 import "./result-card.scss"
 import { FaTwitter } from "react-icons/fa"
+import { AiFillDelete} from "react-icons/ai"
 
 export default function ResultCard ({ result }){
     return (
@@ -14,9 +15,12 @@ export default function ResultCard ({ result }){
             Time <span className="content-time">{result.time} seconds</span>
         </p>
         <div className="content-actions">
-            <button className="share-twitter">
+           <button className="button-twitter">
                 <FaTwitter />
-            </button>
+           </button>
+           <button className="button-delete">
+                <AiFillDelete />
+           </button>
         </div>
     </div>        
     )

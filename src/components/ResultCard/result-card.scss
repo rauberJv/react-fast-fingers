@@ -7,19 +7,6 @@
     flex: 1 1 200px;
     background-color: $black-dot-8;
     color: $text-white;
-
-    .content-correct {
-        color: $bootstrap-success;
-    }
-
-    .content-wrong {
-        color: $bootstrap-danger;
-    }
-
-    .content-time {
-        color: $bootstrap-info;
-    }
-
     p {
         font-size: 1.5rem;
         font-family: 'Courier New', Courier, monospace;
@@ -34,5 +21,70 @@
 
     p + p {
         margin-top: 10px;
+    }
+
+    .content-correct {
+        color: $bootstrap-success;
+    }
+
+    .content-wrong {
+        color: $bootstrap-danger;
+    }
+
+    .content-time {
+        color: $bootstrap-info;
+    }
+
+    .content-actions {
+        margin-top: 20px;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+
+        .button-twitter {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 1px solid transparent;
+            background-color: $bootstrap-primary;
+        
+            svg {
+                color: $text-white;
+                width: 25px;
+                height: 25px;
+            }
+
+            &:hover {
+                background-color: $bootstrap-primary-hover;
+                cursor: pointer
+            }
+
+            &:active {
+                background-color: $bootstrap-primary-active;
+            }
+        }
+
+        .button-delete {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 1px solid transparent;
+            background-color: $bootstrap-danger;
+        
+            svg {
+                color: $text-white;
+                width: 25px;
+                height: 25px;
+            }
+
+            &:hover {
+                background-color: $bootstrap-danger-hover;
+                cursor: pointer;
+            }
+
+            &:active {
+                background-color: $bootstrap-danger-active;
+            }
+        }
     }
 }

@@ -1,8 +1,8 @@
 import "./action-button.scss"
 import { FaSave } from "react-icons/fa";
-import { FaAngleDoubleRight } from "react-icons/fa";
-import { FaRegListAlt } from "react-icons/fa"
-import { FaQuestionCircle } from "react-icons/fa";
+import { FaAngleDoubleRight,  FaRegListAlt,
+        FaQuestionCircle, FaTwitter 
+    } from "react-icons/fa";
 
 export default function ActionButton(props) {
 
