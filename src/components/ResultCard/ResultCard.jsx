@@ -1,11 +1,10 @@
 import "./result-card.scss"
 import { FaTwitter } from "react-icons/fa"
 import { AiFillDelete} from "react-icons/ai"
-import { deleteResult } from "../../api/Results"
 export default function ResultCard ({ result, ...props }){
 
     const removeResult = () => {
-        props.deleteResult(result)
+        props.delete(result)
     }
 
     return (
@@ -14,10 +13,10 @@ export default function ResultCard ({ result, ...props }){
             Correct <span className="content-correct">{result.correct}</span>
         </p>
         <p>
-        Wrong <span className="content-wrong">{result.wrong}</span>
+            Wrong <span className="content-wrong">{result.wrong}</span>
         </p>
         <p>
-            Time <span className="content-time">{result.time} seconds {result.date}</span>
+            Time <span className="content-time">{result.time} seconds</span>
         </p>
         <div className="content-actions">
            <button className="button-twitter">

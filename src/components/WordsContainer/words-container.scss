@@ -8,12 +8,18 @@
     background-color: $bg-white;
     border: 1px solid rgba(0, 0, 0, .4);
     box-shadow: 0 0 2px $black-dot-8;
-    border-radius: 4px;
+    border-radius: 5px;
     overflow: hidden;
 
     span {
         display: inline-block;
         margin: 2px 4px;
         font-size: 1.5rem;
+    }
+}
+
+@media only screen and(max-width: 425px) {
+    .words-container {
+        width: 100%;
     }
 }

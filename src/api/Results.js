@@ -1,17 +1,17 @@
 export const saveResult = (data) => {
     return new Promise((resolve, reject) => {
         let resultsList = []
-        
-        if(localStorage.getItem('results')) {
+
+        if (localStorage.getItem('results')) {
             resultsList = JSON.parse(localStorage.getItem('results'))
             localStorage.removeItem('results')
         }
 
-        setTimeout(() => {  
+        setTimeout(() => {
             resultsList.push(data)
             localStorage.setItem('results', JSON.stringify(resultsList))
             resolve(resultsList)
-        }, 3000);
+        }, 700);
     })
 }
 
@@ -20,9 +20,8 @@ export const getResults = () => {
         let resultsList = JSON.parse(localStorage.getItem('results')) || []
 
         setTimeout(() => {
-            console.log(resultsList)
             resolve(resultsList)
-        }, 300);
+        }, 700);
     })
 }
 
@@ -30,11 +29,15 @@ export const deleteResult = (data) => {
     return new Promise((resolve, reject) => {
         let resultsList = JSON.parse(localStorage.getItem('results'))
 
-        if(resultsList.length > 0) {
+        if (resultsList.length > 0) {
             setTimeout(() => {
                 resultsList = resultsList.filter(result => result.date !== data.date)
+
+                localStorage.removeItem('results')
+                localStorage.setItem('results', JSON.stringify(resultsList))
+
                 resolve(resultsList)
-            }, 300);
+            }, 700);
         }
     })
 }

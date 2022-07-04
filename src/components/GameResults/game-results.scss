@@ -19,3 +19,9 @@
         color: $bootstrap-danger;
     }
 }
+
+@media only screen and(max-width: 425px) {
+    .game-results-container {
+        width: 100%;
+    }
+}

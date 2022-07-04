@@ -1,19 +1,21 @@
 import '../../assets/modal.scss'
 import './modal-results.scss'
 import ActionButton from '../ActionButton/ActionButton'
+import { useNavigate } from 'react-router-dom'
 export default function ModalResults({ showModal, timeInSeconds, correctWords, ...props }) {
+
+    let navigate = useNavigate()
 
     function saveClick() {
         props.save()
     }
 
     function resetClick() {
-        console.log('Reset')
         props.reset()
     }
 
     function listClick() {
-        console.log('list')
+        navigate("/results")
     }
 
     function calculatedResults() {

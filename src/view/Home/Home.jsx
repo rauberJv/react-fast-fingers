@@ -11,7 +11,7 @@ import Spinner from '../../components/Spinner/Spinner'
 import ModalResults from '../../components/ModalResults/ModalResults'
 
 export default function Home() {
-    const initialResultsState = { correct: 0, wrong: 0, time: 0, date: Date.now()}
+    const initialResultsState = { correct: 0, wrong: 0, time: 0, date: Date.now() }
     const INITIALCOUNTERTIME = 10
 
     const [word, setWord] = useState('')
@@ -20,6 +20,7 @@ export default function Home() {
     const [timeInSeconds, setTimeInSeconds] = useState(INITIALCOUNTERTIME)
     const [counter, setCounter] = useState(null)
     const [calculatingResults, setCalculatinResults] = useState(false)
+    const [spinnerMessage, setSpinnerMessage] = useState('')
     const [showResultsModal, setShowResultsModal] = useState(false)
 
     const textInputCallback = (data) => {
@@ -33,9 +34,9 @@ export default function Home() {
     const spaceCallback = () => {
         if (!calculatingResults) {
             if (word.trim() === words[0])
-                setResults({ correct: results.correct + 1, wrong: results.wrong, time: INITIALCOUNTERTIME, date: Date.now()})
+                setResults({ correct: results.correct + 1, wrong: results.wrong, time: INITIALCOUNTERTIME, date: Date.now() })
             else
-                setResults({ correct: results.correct, wrong: results.wrong + 1, time: INITIALCOUNTERTIME, date: Date.now()})
+                setResults({ correct: results.correct, wrong: results.wrong + 1, time: INITIALCOUNTERTIME, date: Date.now() })
             words.shift()
         }
     }
@@ -50,7 +51,9 @@ export default function Home() {
         const textInputElement = document.getElementById('wordInput')
         textInputElement.blur()
 
+        setSpinnerMessage('Calculating Results')
         setCalculatinResults(calculatingResults => !calculatingResults)
+        
         setTimeout(() => {
             setCalculatinResults(calculatingResults => !calculatingResults)
             setShowResultsModal(true)
@@ -67,9 +70,13 @@ export default function Home() {
     }
 
     const saveGame = () => {
-        saveResult(results).then((resultList) => {
-            console.log(resultList)
+        setShowResultsModal(showResultsModal => !showResultsModal)
+        setSpinnerMessage('Saving Result')
+        setCalculatinResults(calculatingResults => !calculatingResults)
+
+        saveResult(results).then(() => {
             resetGame()
+            setCalculatinResults(calculatingResults => !calculatingResults)
         })
     }
 
@@ -108,7 +115,10 @@ export default function Home() {
                 emitSpace={spaceCallback}
             />
 
-            <Spinner showSpinner={calculatingResults} />
+            <Spinner 
+                showSpinner={calculatingResults}
+                spinnerMessage={spinnerMessage}    
+            />
         </main>
     )
 }

@@ -4,13 +4,15 @@ export default function Counter({ timeInSeconds }) {
 
     const [remainingTime, setRemainingTime] = useState('')
 
-    const calculateRemainingTime = () => {
-        const minutes = Math.floor(timeInSeconds / 60)
-        const seconds = Math.floor(timeInSeconds % 60)
-        setRemainingTime(`${minutes}m ${seconds}s`)
-    }
+
 
     useEffect(() => {
+        function calculateRemainingTime() {
+            const minutes = Math.floor(timeInSeconds / 60)
+            const seconds = Math.floor(timeInSeconds % 60)
+            setRemainingTime(`${minutes}m ${seconds}s`)
+        }
+
         calculateRemainingTime()
     }, [timeInSeconds])
 
