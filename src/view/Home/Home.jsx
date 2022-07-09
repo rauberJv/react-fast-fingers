@@ -12,7 +12,7 @@ import ModalResults from '../../components/ModalResults/ModalResults'
 
 export default function Home() {
     const initialResultsState = { correct: 0, wrong: 0, time: 0, date: Date.now() }
-    const INITIALCOUNTERTIME = 10
+    const INITIALCOUNTERTIME = 60
 
     const [word, setWord] = useState('')
     const [words, setWords] = useState(wordsArray)
